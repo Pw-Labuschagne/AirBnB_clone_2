@@ -33,4 +33,6 @@ printf %s "server {
     }
 }" > /etc/nginx/sites-available/default
 
+sudo sed -i '44i \\n\tlocation /hbnb_static {\n\t\talias /data/web_static/current/;\n\t}' /etc/nginx/sites-available/default
+
 service nginx restart
